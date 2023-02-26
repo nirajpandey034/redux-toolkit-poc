@@ -30,8 +30,10 @@ function ProductContainer() {
   ];
   return (
     <div className="productListContainer">
-      {products.map((item, index) => {
-        return <ProductCard key={index} data={item} />;
+      {products.map((item) => {
+        return (
+          <ProductCard key={item.id} data={item} />
+        );
       })}
     </div>
   );

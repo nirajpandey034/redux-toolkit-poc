@@ -10,10 +10,31 @@ export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addToCart: (state, item) => {
-      state.products = [...state.products, item];
+    addToCart: (state = initialState, item) => {
+      if (
+        state.products.filter((p) => {
+          return p.id === item.payload.id;
+        }).length === 0
+      ) {
+        state.products = [...state.products, { ...item.payload, count: 1 }];
+      } else {
+        state.products = state.products.map((ele) => {
+          if (ele.id === item.payload.id) {
+            ele.count = ele.count + 1;
+          }
+          return ele;
+        });
+      }
     },
-    removeFromCart: (state, id) => {},
+    removeFromCart: (state = initialState, data) => {
+      state.products = state.products.map((ele) => {
+        if (ele.id === data.payload.id) {
+          ele.count = ele.count - 1;
+        }
+        return ele;
+      });
+    },
+
     clearCart: (state) => {
       state.products = [];
     },
