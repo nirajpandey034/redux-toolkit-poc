@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard';
+import './style.css';
 function ProductContainer() {
   const products = [
     {
@@ -28,7 +29,7 @@ function ProductContainer() {
     },
   ];
   return (
-    <div>
+    <div className="productListContainer">
       {products.map((item, index) => {
         return <ProductCard key={index} data={item} />;
       })}

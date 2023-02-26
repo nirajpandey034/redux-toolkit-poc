@@ -1,0 +1,14 @@
+.productListContainer {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1rem;
+  padding-inline: 1rem;
+  padding-block: 1rem;
+}
+
+.productCard {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: '5%';
+}
