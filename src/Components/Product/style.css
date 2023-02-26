@@ -6,6 +6,16 @@
   padding-block: 1rem;
 }
 
+@media only screen and (max-width: 426px) {
+  .productListContainer {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1rem;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+  }
+}
+
 .productCard {
   border: 1px solid black;
   display: flex;
